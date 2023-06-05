@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.equicklearning.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.equicklearning.fragments.CategoryFragment"
+        android:label="fragment_category"
+        tools:layout="@layout/fragment_category" >
+        <action
+            android:id="@+id/action_categoryFragment_to_categoryPostFragment"
+            app:destination="@id/categoryPostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryPostFragment"
+        android:name="com.equicklearning.fragments.CategoryPostFragment"
+        android:label="fragment_category_post"
+        tools:layout="@layout/fragment_home" >
+        <argument android:name="category"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="430"/>
+    </fragment>
+</navigation>
